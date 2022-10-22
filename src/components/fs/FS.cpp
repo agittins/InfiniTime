@@ -33,6 +33,9 @@ void FS::Init() {
   // try mount
   int err = lfs_mount(&lfs, &lfsConfig);
 
+  // AJG test: force formatting
+  err = LFS_ERR_INVAL;
+
   // reformat if we can't mount the filesystem
   // this should only happen on the first boot
   if (err != LFS_ERR_OK) {
